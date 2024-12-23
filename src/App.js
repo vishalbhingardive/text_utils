@@ -3,8 +3,8 @@ import Alert from "./Components/Alert";
 import Navbar from "./Components/Navbar";
 import TextForm from "./Components/TextForm";
 import React, { useState } from "react";
-import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
-import About from "./Components/About";
+// import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
+// import About from "./Components/About";
 function App() {
   const [mode, setMode] = useState("light");
   const toggleMode = () => {
@@ -33,24 +33,31 @@ function App() {
 
   return (
     <>
-         <BrowserRouter>
+         {/* <BrowserRouter>
       <Navbar
         title="TextUtiles"
         aboutText="About"
         mode={mode}
         toggleMode={toggleMode}
       />
-      <Alert alert={alert} />
+      <Alert alert={alert} /> 
       <div className="container my-3">
         <Routes>
-          {/* Route for About page */}
           <Route path="/about" element={<About />} />
-          
-          {/* Route for Home page */}
           <Route path="/" element={<TextForm />} />
         </Routes>
       </div>
-    </BrowserRouter>
+    </BrowserRouter> */}
+      <Navbar
+        title="TextUtiles"
+        aboutText="About"
+        mode={mode}
+        toggleMode={toggleMode}
+      />
+       <Alert alert={alert} />
+       <div className="container my-3">
+        <TextForm heading="Enter the text to analyze below" mode={mode} showAlert={showAlert} />
+      </div>
     </>
   );
 }
